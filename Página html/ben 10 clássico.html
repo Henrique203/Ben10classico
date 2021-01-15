@@ -1,0 +1,93 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <meta charset="utf-8" />
+        <title>Ben 10</title>
+        <style>
+            img{
+                width: 250;
+                height: 450;
+                border-radius: 8px;
+            }
+            body{
+                font-family: impact;
+                color: rgb(1, 85, 1);
+                background-color: chartreuse;
+            }
+            .realce{
+                font-size: 50px;
+                -webkit-text-stroke-width: 1px;
+                -webkit-text-stroke-color: white;
+            }
+            p{
+                font-size: x-large;
+            }
+            .medio{
+                font-size: 30px;
+            }
+            .margem{
+                margin-bottom: 6px;
+            }
+        </style>
+        <script>
+            function bla(){
+                console.log("blablabla");
+            }
+            let x = 0;
+            $(document).ready(function(){
+                $('img').on('click', function(){
+                    let i = $(this).attr("id"); //"img"
+                    let local = $(this).attr("src");//$('src', this);  "#"+i
+                    let subst;
+                    let j, k, t=0;
+                    let aux;
+                    for(j=0;j<local.length;j++){ //chama.png
+                        if(local.charAt(j)=="."){
+                            k=j;
+                        }
+                        if(local.charAt(j)=="2")
+                            t=1;
+                    }
+                    if(t==1){
+                        aux = local.substring(0,k-1)
+                    }
+                    else
+                        aux=local.substring(0, k);
+                    $(this).attr("src", "");
+                    if(t!=1){ //x%2==0
+                        local = aux + "2.png";
+                        x++;
+                    }
+                    else{
+                        local = aux + ".png";
+                        x++;
+                    }
+                    console.log("id do alien: "+i);
+                    console.log("quantidade de cliques: " + x);
+                    console.log("conteúdo do cofre: ");
+                    console.log("boatarde");
+                    console.log("conteúdo aux: "+aux);
+                    console.log("conteúdo local: "+local);
+                    $(this).attr("src", local); //"#"+i
+                    });
+            });   
+
+        </script>
+    </head>
+    <body>
+        <div align="center" class="realce">BEN 10 - Clássico</div> 
+        <div align="center" class="medio">Aliens que aparecem no Ben 10 clássico</div>
+        <div align="center" class="margem">
+            <audio controls autoplay loop>
+                <source src="ben10tema.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        <div align="center" id="2">  
+        <img src="Chama.png" id="1"> <img src="Quatro Braços.png"id="2"> <img src="Besta.png" id="3"> <img src="Diamante.png" id="4"> 
+        <img src="Aquático.png" id="5"> <img src="Bala de canhão.png" id="6"> <img src="BenMúmia.png" id="7"> <img src="Cipó Selvagem.png" id="8"> 
+        <img src="Clone.png" id="9"> <img src="Fantasmático.png" id="10"> <img src="Gigante.png" id="11"> <img src="Glutão.png" id="12"> 
+        <img src="Insectóide.png" id="13"> <img src="Lobisben.png" id="14"> <img src="Massa cinzenta.png" id="15"> <img src="Mega Olhos.png" id="16"> 
+        <img src="Ultra T.png" id="17"> <img src="XLR8.png" id="18">         
+        </div> 
+    </body>
+</html>
